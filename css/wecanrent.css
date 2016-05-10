@@ -1,3 +1,33 @@
 .extra-spacing {
 	margin-top: 70px;
 }
+
+.p-container {
+	border: 3px solid #fed136;
+	border-radius: 3px;
+	padding: 10px 20px;
+}
+
+.p-container h4.service-heading {
+	font-size: 22px;
+}
+
+.p-container h5.price {
+	font-size: 22px;
+}
+
+.p-container ul {
+	list-style-type: none;
+	padding: 0; 
+	margin: 0px 0px 10px 0px;
+}
+
+.p-container li {
+
+}
+
+.btn-getstarted {
+	font-size: 14px;
+    padding: 10px 20px;
+    margin: 0px 0px 10px 0px;
+}
