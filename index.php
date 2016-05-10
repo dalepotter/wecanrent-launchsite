@@ -8,11 +8,23 @@ $twig = new Twig_Environment($loader);
 
 if ( $_REQUEST['path'] == 'index.html' || !array_key_exists('path', $_REQUEST) ){
 	// Render hompage
-	$twig->render('index.html');
+	echo $twig->render('index.html');
 
 } elseif ( $_REQUEST['path'] == 'pricing.html' ){
 	// Render pricing page
-	$twig->render('pricing.html');
+	echo $twig->render('pricing.html');
+
+} elseif ( $_REQUEST['path'] == 'getstarted.html' ){
+	// Render signup form
+	echo $twig->render('getstarted.html');
+
+} elseif ( $_REQUEST['path'] == 'oops.html' ){
+	// Render 'not ready' page
+	echo $twig->render('oops.html');
+
+} else {
+	// Page not found
+	echo "Error 404 - you've reached the wrong page somehow."
 }
 
 ?>
