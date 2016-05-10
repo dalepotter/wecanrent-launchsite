@@ -6,6 +6,8 @@ require_once 'vendor/autoload.php';
 $loader = new Twig_Loader_Filesystem('templates');
 $twig = new Twig_Environment($loader);
 
+var_dump($_POST);
+
 if ( $_REQUEST['path'] == 'index.html' || !array_key_exists('path', $_REQUEST) ){
 	// Render hompage
 	echo $twig->render('index.html');
@@ -16,9 +18,20 @@ if ( $_REQUEST['path'] == 'index.html' || !array_key_exists('path', $_REQUEST) )
 
 } elseif ( $_REQUEST['path'] == 'getstarted.html' ){
 	// Render signup form
-	echo $twig->render('getstarted.html');
 
-} elseif ( $_REQUEST['path'] == 'oops.html' ){
+	// Check that the service options are OK
+	if (in_array($_GET['service'], array('basic', 'premium', 'ultimate'))){
+		$service = $_GET['service'];
+	} else {
+		$service = 'unknown';
+	}
+
+	echo $twig->render('getstarted.html', array('service' => $service));
+
+} elseif ( $_REQUEST['path'] == 'go.html' ){
+	// Check for form input
+	// @todo
+
 	// Render 'not ready' page
 	echo $twig->render('oops.html');
 
