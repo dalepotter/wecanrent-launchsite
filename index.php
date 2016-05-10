@@ -24,7 +24,7 @@ if ( $_REQUEST['path'] == 'index.html' || !array_key_exists('path', $_REQUEST) )
 
 } else {
 	// Page not found
-	echo "Error 404 - you've reached the wrong page somehow."
+	echo "Error 404 - you've reached the wrong page somehow.";
 }
 
 ?>
