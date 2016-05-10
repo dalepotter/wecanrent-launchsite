@@ -6,7 +6,6 @@ require_once 'vendor/autoload.php';
 $loader = new Twig_Loader_Filesystem('templates');
 $twig = new Twig_Environment($loader);
 
-var_dump($_POST);
 
 if ( $_REQUEST['path'] == 'index.html' || !array_key_exists('path', $_REQUEST) ){
 	// Render hompage
@@ -31,9 +30,33 @@ if ( $_REQUEST['path'] == 'index.html' || !array_key_exists('path', $_REQUEST) )
 } elseif ( $_REQUEST['path'] == 'go.html' ){
 	// Check for form input
 	require 'mail/form_check.php';
+
+	// Import settings
+	require_once 'config.php';
+
+	// Import gmail email sending
+	require_once 'mail/emailfromgmail.php';
+
 	if (is_form_data_valid($_POST)){
-		// @todo Send form data
-		echo 'send email now!';
+		// Store form data in csv
+
+		// Send form data
+		$email = new emailFromGmail();
+		$email->to = $email_settings['full_address'];
+		$email->subject = "New wecanrent signup";
+		$email->body = "New sign-up received. Here's the details: \n\n
+		     Name: " . filter_var($_POST['name'], FILTER_SANITIZE_STRING) . "\n
+		     Email: " . filter_var($_POST['email'], FILTER_SANITIZE_STRING) . "\n
+		     Phone: " . filter_var($_POST['phone'], FILTER_SANITIZE_STRING) . "\n
+
+		     Service: " . filter_var($_POST['service'], FILTER_SANITIZE_STRING) . "\n
+		     Property postcode: " . filter_var($_POST['property_postcode'], FILTER_SANITIZE_STRING) . "\n
+
+		     Number of properties: " . filter_var($_POST['num_properties'], FILTER_SANITIZE_STRING) . "\n
+		     How did you hear about wecanrent: " . filter_var($_POST['how_heard'], FILTER_SANITIZE_STRING) . "
+		";
+		$email->sendEmail();
+
 	} else {
 		echo "Something was wrong with the form data. Please try again.";
 	}
