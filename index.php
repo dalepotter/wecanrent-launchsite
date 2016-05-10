@@ -30,7 +30,13 @@ if ( $_REQUEST['path'] == 'index.html' || !array_key_exists('path', $_REQUEST) )
 
 } elseif ( $_REQUEST['path'] == 'go.html' ){
 	// Check for form input
-	// @todo
+	require 'mail/form_check.php';
+	if (is_form_data_valid($_POST)){
+		// @todo Send form data
+		echo 'send email now!';
+	} else {
+		echo "Something was wrong with the form data. Please try again.";
+	}
 
 	// Render 'not ready' page
 	echo $twig->render('oops.html');
