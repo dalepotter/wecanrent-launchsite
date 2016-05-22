@@ -4,16 +4,32 @@
 
 .p-container {
 	border: 3px solid #fed136;
-	border-radius: 3px;
+	border-radius: 12px;
 	padding: 10px 20px;
+	margin: 20px 40px 30px 40px;
+	position: relative;
+	height: 550px;
 }
 
 .p-container h4.service-heading {
 	font-size: 22px;
 }
 
+.p-container div.service-description {
+	
+}
+
+.p-container div.service-content {
+	position: absolute;
+	bottom: 0;
+}
+
 .p-container h5.price {
 	font-size: 22px;
+}
+
+.p-container h5.price span {
+	font-size: 14px;
 }
 
 .p-container ul {
@@ -23,7 +39,12 @@
 }
 
 .p-container li {
+	margin: 0px 0px 10px 0px;
+}
 
+.p-container li.restricted-feature {
+	color: #c9c9c9;
+	text-decoration: line-through;
 }
 
 .btn-getstarted {

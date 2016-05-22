@@ -28,37 +28,42 @@ if ( $_REQUEST['path'] == 'index.html' || !array_key_exists('path', $_REQUEST) )
 	echo $twig->render('getstarted.html', array('service' => $service));
 
 } elseif ( $_REQUEST['path'] == 'go.html' ){
-	// Check for form input
-	require 'mail/form_check.php';
+	
+	if ($_POST){
+	// If there is form data, validate and send
 
-	// Import settings
-	require_once 'config.php';
+		// Check for form input
+		require 'mail/form_check.php';
 
-	// Import gmail email sending
-	require_once 'mail/emailfromgmail.php';
+		// Import settings
+		require_once 'config.php';
 
-	if (is_form_data_valid($_POST)){
-		// Store form data in csv
+		// Import gmail email sending
+		require_once 'mail/emailfromgmail.php';
 
-		// Send form data
-		$email = new emailFromGmail();
-		$email->to = $email_settings['full_address'];
-		$email->subject = "New wecanrent signup";
-		$email->body = "New sign-up received. Here's the details: \n\n
-		     Name: " . filter_var($_POST['name'], FILTER_SANITIZE_STRING) . "\n
-		     Email: " . filter_var($_POST['email'], FILTER_SANITIZE_STRING) . "\n
-		     Phone: " . filter_var($_POST['phone'], FILTER_SANITIZE_STRING) . "\n
+		if (is_form_data_valid($_POST)){
+			// Store form data in csv
 
-		     Service: " . filter_var($_POST['service'], FILTER_SANITIZE_STRING) . "\n
-		     Property postcode: " . filter_var($_POST['property_postcode'], FILTER_SANITIZE_STRING) . "\n
+			// Send form data
+			$email = new emailFromGmail();
+			$email->to = $email_settings['full_address'];
+			$email->subject = "New wecanrent signup";
+			$email->body = "New sign-up received. Here's the details: \n\n
+			     Name: " . filter_var($_POST['name'], FILTER_SANITIZE_STRING) . "\n
+			     Email: " . filter_var($_POST['email'], FILTER_SANITIZE_STRING) . "\n
+			     Phone: " . filter_var($_POST['phone'], FILTER_SANITIZE_STRING) . "\n
 
-		     Number of properties: " . filter_var($_POST['num_properties'], FILTER_SANITIZE_STRING) . "\n
-		     How did you hear about wecanrent: " . filter_var($_POST['how_heard'], FILTER_SANITIZE_STRING) . "
-		";
-		$email->sendEmail();
+			     Service: " . filter_var($_POST['service'], FILTER_SANITIZE_STRING) . "\n
+			     Property postcode: " . filter_var($_POST['property_postcode'], FILTER_SANITIZE_STRING) . "\n
 
-	} else {
-		echo "Something was wrong with the form data. Please try again.";
+			     Number of properties: " . filter_var($_POST['num_properties'], FILTER_SANITIZE_STRING) . "\n
+			     How did you hear about wecanrent: " . filter_var($_POST['how_heard'], FILTER_SANITIZE_STRING) . "
+			";
+			$email->sendEmail();
+
+		} else {
+			echo "Something was wrong with the form data. Please try again.";
+		}
 	}
 
 	// Render 'not ready' page
