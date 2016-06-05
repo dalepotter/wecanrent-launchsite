@@ -1,9 +1,87 @@
+/* Overwrites of agency.css */
+
+body {
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header {
+	text-align: left;
+}
+
+section h3.section-subheading {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+}
+
+.btn-xl {
+	color: #000;
+	border-color: #66ffcc;
+	background-color: #66ffcc;
+}
+
+a {
+  color: #66ffcc;
+}
+a:hover,
+a:focus,
+a:active,
+a.active {
+  color: #5debbc;
+}
+
+.btn-xl:hover, .btn-xl:focus, .btn-xl:active, .btn-xl.active, .open .dropdown-toggle.btn-xl {
+    color: #000;
+    background-color: #5debbc;
+    border-color: #5debbc;
+}
+
+section .reduced-padding {
+    padding: 60px 0;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:active,
+.navbar-default .navbar-brand.active {
+  color: #66ffcc;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #66ffcc;
+}
+
+.navbar-default .nav li a:hover,
+.navbar-default .nav li a:focus {
+  color: #66ffcc;
+}
+.navbar-default .navbar-nav > .active > a {
+  background-color: #66ffcc;
+}
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background-color: #66ffcc;
+}
+
+
+/* Custom CSS */
+
+.navbar-dark {
+  background-color: #222;
+}
+
+.logo {
+	height: 50px;
+	margin-top: -20px;
+}
+
 .extra-spacing {
 	margin-top: 70px;
 }
 
 .p-container {
-	border: 3px solid #fed136;
+	border: 3px solid #66ffcc;
 	border-radius: 12px;
 	padding: 10px 20px;
 	margin: 20px 40px 30px 40px;
@@ -51,4 +129,16 @@
 	font-size: 14px;
     padding: 10px 20px;
     margin: 0px 0px 10px 0px;
+}
+
+p.bold {
+	font-weight: bold;
+}
+
+.icons {
+	width: 100px;
+}
+
+.section-grey{
+	background-color: #f1f1f1;
 }
