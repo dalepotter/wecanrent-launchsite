@@ -64,6 +64,17 @@ section .reduced-padding {
   background-color: #66ffcc;
 }
 
+.navbar-default .navbar-toggle {
+  background-color: #66ffcc;
+  border-color: #66ffcc;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #66ffcc;
+}
 
 /* Custom CSS */
 
@@ -72,8 +83,8 @@ section .reduced-padding {
 }
 
 .logo {
-	height: 50px;
-	margin-top: -20px;
+	height: 45px;
+	margin-top: -17px;
 }
 
 .extra-spacing {
