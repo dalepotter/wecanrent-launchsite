@@ -154,14 +154,14 @@ section .reduced-padding {
 
 p.center-reduced-width {
 	width: 90%;
+	margin: 0 auto;
+	padding-top: 10px;
 }
 
 @media (min-width: 992px) {
 	p.center-reduced-width {
 		width: 800px;
 	    text-align: center;
-	    margin: 0 auto;
-	    padding-top: 10px;
 	}
 }
 
