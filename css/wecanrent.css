@@ -84,6 +84,9 @@ section .reduced-padding {
   background-color: #66ffcc;
 }
 
+.text-primary {
+	color: #66ffcc;
+}
 
 /* Custom CSS */
 
@@ -170,7 +173,10 @@ p.bold {
 }
 
 .icons {
-	width: 100px;
+	position: absolute;
+    top: 28px;
+    left: 33px;
+    width: 53px;
 }
 
 .section-grey{
