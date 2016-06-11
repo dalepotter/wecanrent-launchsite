@@ -113,8 +113,6 @@ section#contact {
 	border-radius: 12px;
 	padding: 10px 20px;
 	margin: 20px 40px 30px 40px;
-	position: relative;
-	height: 550px;
 }
 
 .p-container h4.service-heading {
@@ -123,11 +121,6 @@ section#contact {
 
 .p-container div.service-description {
 	
-}
-
-.p-container div.service-content {
-	position: absolute;
-	bottom: 0;
 }
 
 .p-container h5.price {
