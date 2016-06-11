@@ -88,6 +88,11 @@ section .reduced-padding {
 	color: #000066;
 }
 
+section#contact {
+	background-image: url('../img/wecanrent-register.jpg');
+	background-size: 1200px;
+}
+
 /* Custom CSS */
 
 .navbar-dark {
