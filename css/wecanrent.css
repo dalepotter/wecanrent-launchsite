@@ -93,6 +93,10 @@ section#contact {
 	background-size: 1200px;
 }
 
+.text-muted {
+	margin: 20px 0;
+}
+
 /* Custom CSS */
 
 .navbar-dark {
@@ -124,22 +128,30 @@ section#contact {
 }
 
 .p-container h5.price {
-	font-size: 22px;
+	font-size: 30px;
 }
 
 .p-container h5.price span {
 	font-size: 14px;
 	display: block;
+	margin: 10px 0;
 }
 
 .p-container ul {
 	list-style-type: none;
 	padding: 0; 
-	margin: 0px 0px 10px 0px;
+	margin: 40px 20px;
 }
 
 .p-container li {
-	margin: 0px 0px 10px 0px;
+	margin: 0px 0px 18px 0px;
+	text-align: left;
+}
+
+.p-container li:before {
+    font-family: 'FontAwesome';
+    content: '\f00c';
+    margin: 0 10px 0 0;
 }
 
 .p-container li.restricted-feature {
@@ -147,10 +159,19 @@ section#contact {
 	text-decoration: line-through;
 }
 
+.p-container li.restricted-feature:before {
+    font-family: 'FontAwesome';
+    content: '\f00d';
+}
+
 .btn-getstarted {
 	font-size: 14px;
     padding: 10px 20px;
     margin: 0px 0px 10px 0px;
+}
+
+p.upgrades {
+	font-size: 18px;
 }
 
 p.center-reduced-width {
